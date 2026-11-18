@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  smartpdf-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smartpdf_nexora
+    ports:
+      - "8000:8000"
+    environment:
+      - JWT_SECRET=smartpdf-nexora-production-secret-key-2026
+      - PORT=8000
+    volumes:
+      - ./backend/storage:/app/backend/storage
+    restart: unless-stopped

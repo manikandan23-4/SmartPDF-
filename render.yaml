@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: smartpdf-nexora
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: JWT_SECRET
+        generateValue: true
